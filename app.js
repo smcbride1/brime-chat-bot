@@ -54,7 +54,7 @@ webSocket.onmessage = (event) => {
 }
 
 let receiveMessageFunction;
-const onRecieveMessage = (func) => {
+export const onRecieveMessage = (func) => {
     receiveMessageFunction = func;
 }
 
