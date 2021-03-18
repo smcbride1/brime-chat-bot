@@ -10,7 +10,7 @@ const ablyCredentials = {
     key: process
 };
 //Channel's username
-const username;
+const username = process.env.USERNAME;
 
 //Client sessions; manages user command limit
 let clientSessions = {};
