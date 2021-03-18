@@ -13,7 +13,7 @@ const username;
 let webSocket;
 const connect = () => {
     console.log("Attempting to connect...");
-    const webSocket = new webSocket(`wss://realtime.ably.io/?key=${ablyCredentials.key}&clientId=${ablyCredentials}&format=json&heartbeats=true&v=1.2&lib=js-web-1.2.6`);
+    webSocket = new webSocket(`wss://realtime.ably.io/?key=${ablyCredentials.key}&clientId=${ablyCredentials}&format=json&heartbeats=true&v=1.2&lib=js-web-1.2.6`);
 }
 
 webSocket.onerror = (error) => {
