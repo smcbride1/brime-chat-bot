@@ -28,6 +28,11 @@ websocket.onopen = () => {
     console.log("Connected successfully");
 }
 
+const close = () => {
+    console.log("Closing connection...");
+    websocket.close();
+}
+
 webSocket.onmessage = (event) => {
     data = JSON.parse(event.data);
     switch(data.action) {
