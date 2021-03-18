@@ -7,6 +7,8 @@ const ablyCredentials = {
     clientId: process.env.CLIENT_ID,
     key: process
 };
+//Channel's username
+const username;
 
 let webSocket;
 const connect = () => {
@@ -24,4 +26,19 @@ webSocket.onclose = () => {
 
 websocket.onopen = () => {
     console.log("Connected successfully");
+}
+
+webSocket.onmessage = (event) => {
+    data = JSON.parse(event.data);
+    switch(data.action) {
+        case 4:
+            webSocket.send({"action":10,"channel":`[?rewind=100]${username}`});
+            break;
+        case 11:
+            webSocket.send({"action":14,"channel":`[?rewind=100]${username}`,"msgSerial":0,"presence":[{"action":2,"data":null}]});
+            break;
+        case 15:
+            break;
+        default:
+    }
 }
