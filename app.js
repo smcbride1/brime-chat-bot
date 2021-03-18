@@ -1,3 +1,5 @@
+require('dotenv/config');
+
 //Max number of chat messages that can be sent within a minute
 const chatLimit = process.env.CHAT_LIMIT || 40;
 //Max number of commands per user per minute
