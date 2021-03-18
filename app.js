@@ -92,3 +92,5 @@ const clearMessages = (connectionId) => {
 const currentUnixTimestamp = () => {
     Math.floor(Date.now() / 1000)
 }
+
+connect();
